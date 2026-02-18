@@ -48,19 +48,6 @@
           background-color 0.3s,
           color 0.2s;
       }
-      body.light-theme {
-        --bg-deep: #f9f7f4;
-        --bg-surface: #f9f7f4;
-        --bg-card: #ffffff;
-        --text-luxury: #2e2b2b;
-        --text-soft: #4a4646;
-        --text-muted: #7a7575;
-        --accent-gold: #b37b4c;
-        --accent-soft: #b37b4c20;
-        --border-subtle: #e5dfd9;
-        --nav-bg: #fffffff5;
-        --shadow-dramatic: 0 30px 40px -25px #b0a090;
-      }
       ::selection {
         background: var(--accent-gold);
         color: #0f0f14;
@@ -208,37 +195,6 @@
       }
       .nav-links a:hover::after {
         transform: translateX(-50%) scaleX(1);
-      }
-      .theme-toggle {
-        background: var(--bg-surface);
-        border: 1px solid var(--accent-gold);
-        border-radius: 60px;
-        padding: 4px 6px;
-        display: flex;
-        cursor: pointer;
-        margin-left: 30px;
-      }
-      .theme-toggle span {
-        padding: 8px 20px;
-        border-radius: 60px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: 0.2s;
-      }
-      .theme-toggle .light-mode {
-        color: var(--text-muted);
-      }
-      .theme-toggle .dark-mode {
-        background: var(--accent-gold);
-        color: #0f0f14;
-      }
-      body.light-theme .theme-toggle .light-mode {
-        background: var(--accent-gold);
-        color: #0f0f14;
-      }
-      body.light-theme .theme-toggle .dark-mode {
-        background: transparent;
-        color: var(--text-muted);
       }
       .nav-right {
         display: flex;
@@ -689,22 +645,8 @@
           justify-content: flex-end;
           align-items: center;
         }
-        .nav-links {
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 90px;
-          width: 100%;
-          display: flex;
-          gap: 30px;
-          justify-content: center;
-          padding-top: 20px;
-        }
         .hero {
           gap: 30px;
-        }
-        .theme-toggle {
-          margin-left: 0;
         }
         .footer {
           justify-content: center;
@@ -716,12 +658,6 @@
         }
         .logo {
           font-size: 20px;
-        }
-        .theme-toggle {
-          padding: 0;
-        }
-        .theme-toggle span {
-          padding: 2px 12px;
         }
         .navbar {
           padding-bottom: 40px;
@@ -969,17 +905,13 @@
     <div class="container">
       <!-- navbar -->
       <nav class="navbar">
-        <div class="logo"><i class="fab fa-shopify"></i> Shopify</div>
+        <div class="logo"><i class="fab fa-shopify"></i></div>
         <div class="nav-right">
           <div class="nav-links">
             <a href="#work">work</a>
             <a href="#edu-exp">education</a>
             <a href="#experience">experience</a>
             <a href="#contact">contact</a>
-          </div>
-          <div class="theme-toggle" id="themeToggle">
-            <span class="light-mode"><i class="fas fa-sun"></i></span>
-            <span class="dark-mode"><i class="fas fa-moon"></i></span>
           </div>
         </div>
       </nav>
@@ -1363,19 +1295,6 @@
 
     <script>
       (function () {
-        // Theme toggle
-        const toggleBtn = document.getElementById("themeToggle");
-        const body = document.body;
-        if (localStorage.getItem("theme") === "light") {
-          body.classList.add("light-theme");
-        }
-        toggleBtn.addEventListener("click", () => {
-          body.classList.toggle("light-theme");
-          localStorage.setItem(
-            "theme",
-            body.classList.contains("light-theme") ? "light" : "dark",
-          );
-        });
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
