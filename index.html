@@ -1106,13 +1106,15 @@
                 ><span>App Integrations</span><span>JSON Templates</span
                 ><span>Responsive UI</span>
               </div>
-              <div style="display: flex; gap: 10px;">
+              <div style="display: flex; gap: 10px">
                 <a
                   href="https://decision-lenss.myshopify.com/"
                   class="btn-outline"
                   >Visit <i class="fas fa-arrow-right"></i
                 ></a>
-                <div class="btn-primary" style="padding: 0px 19px">Password : 123</div>
+                <div class="btn-primary" style="padding: 0px 19px">
+                  Password : 123
+                </div>
               </div>
             </div>
           </div>
@@ -1440,8 +1442,8 @@
             submitBtn.innerHTML =
               '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            const serviceID = "YOUR_SERVICE_ID";
-            const templateID = "YOUR_TEMPLATE_ID";
+            const serviceID = "service_ag1swib";
+            const templateID = "template_cvdng5m";
             emailjs.sendForm(serviceID, templateID, this).then(
               function () {
                 alert(
